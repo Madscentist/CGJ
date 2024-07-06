@@ -37,6 +37,8 @@ public class MonsterController : MonoBehaviour
         _agent.updateUpAxis = false;
 
         _agent.SetDestination(player.position);
+
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     private void Update()
