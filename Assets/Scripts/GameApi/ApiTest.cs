@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UseTool : MonoBehaviour
+public class ApiTest : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,6 @@ public class UseTool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
