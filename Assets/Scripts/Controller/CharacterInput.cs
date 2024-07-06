@@ -71,6 +71,24 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""boost"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a05e80f-ea80-43be-bc81-dea8903b8c98"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""gps"",
+                    ""type"": ""Button"",
+                    ""id"": ""51970fbf-8a1d-44d7-9535-d989bbbd7c63"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -197,8 +215,30 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""52ca0f6c-72fc-481e-9b18-419971e91915"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""tool1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""af80faa0-fa5f-44ac-a60b-f71ee9b45fce"",
                     ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""tool2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc7f9212-4c36-458b-9086-44c90afd54a5"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -219,12 +259,78 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""ad9a0842-6177-42bf-93d3-398259034484"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""tool3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c73402c6-767a-4b52-9181-132529910445"",
                     ""path"": ""<Keyboard>/4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""tool4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""612bcf99-ebcf-402a-b3ca-877b8587027c"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""tool4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0e8c40f-561e-480e-b2f5-45fbb2d23833"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eef38c50-180f-4a54-8e2f-cd0a0e23d5b4"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""941899ed-2a61-43ad-8bec-11993fb14d68"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""gps"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72ad568e-175b-4a98-9d44-27ee7872e7c5"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""gps"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -240,6 +346,8 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         m_Player_tool2 = m_Player.FindAction("tool2", throwIfNotFound: true);
         m_Player_tool3 = m_Player.FindAction("tool3", throwIfNotFound: true);
         m_Player_tool4 = m_Player.FindAction("tool4", throwIfNotFound: true);
+        m_Player_boost = m_Player.FindAction("boost", throwIfNotFound: true);
+        m_Player_gps = m_Player.FindAction("gps", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -306,6 +414,8 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_tool2;
     private readonly InputAction m_Player_tool3;
     private readonly InputAction m_Player_tool4;
+    private readonly InputAction m_Player_boost;
+    private readonly InputAction m_Player_gps;
     public struct PlayerActions
     {
         private @CharacterInput m_Wrapper;
@@ -315,6 +425,8 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         public InputAction @tool2 => m_Wrapper.m_Player_tool2;
         public InputAction @tool3 => m_Wrapper.m_Player_tool3;
         public InputAction @tool4 => m_Wrapper.m_Player_tool4;
+        public InputAction @boost => m_Wrapper.m_Player_boost;
+        public InputAction @gps => m_Wrapper.m_Player_gps;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -339,6 +451,12 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @tool4.started += instance.OnTool4;
             @tool4.performed += instance.OnTool4;
             @tool4.canceled += instance.OnTool4;
+            @boost.started += instance.OnBoost;
+            @boost.performed += instance.OnBoost;
+            @boost.canceled += instance.OnBoost;
+            @gps.started += instance.OnGps;
+            @gps.performed += instance.OnGps;
+            @gps.canceled += instance.OnGps;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -358,6 +476,12 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
             @tool4.started -= instance.OnTool4;
             @tool4.performed -= instance.OnTool4;
             @tool4.canceled -= instance.OnTool4;
+            @boost.started -= instance.OnBoost;
+            @boost.performed -= instance.OnBoost;
+            @boost.canceled -= instance.OnBoost;
+            @gps.started -= instance.OnGps;
+            @gps.performed -= instance.OnGps;
+            @gps.canceled -= instance.OnGps;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -382,5 +506,7 @@ public partial class @CharacterInput: IInputActionCollection2, IDisposable
         void OnTool2(InputAction.CallbackContext context);
         void OnTool3(InputAction.CallbackContext context);
         void OnTool4(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
+        void OnGps(InputAction.CallbackContext context);
     }
 }

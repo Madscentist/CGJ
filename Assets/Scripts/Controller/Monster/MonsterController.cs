@@ -32,11 +32,14 @@ public class MonsterController : MonoBehaviour
     
     private void Start()
     {
+        player = GameApi.GameApi.Instance.Player();
+
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
 
         _agent.SetDestination(player.position);
+
     }
 
     private void Update()
@@ -80,4 +83,5 @@ public class MonsterController : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
+    
 }

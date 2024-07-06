@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Monster.unity
+    guid: 7eeba5f4fed2649499a21a0c0d771cbf
   m_configObjects: {}
