@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab984f35200a2be45ae52daa816cff16, type: 3}
+  m_Name: DialogConfig
+  m_EditorClassIdentifier: 
+  _datas:
+  - _name: Dialog
+    _id: 1
+    _actions:
+    - Type: 0
+      _action:
+        rid: 3188358450459967491
+    - Type: 1
+      _action:
+        rid: 3188358450459967494
+    - Type: 0
+      _action:
+        rid: 3188358459041251328
+    - Type: 2
+      _action:
+        rid: 3188358459041251329
+    - Type: 0
+      _action:
+        rid: 3188358459041251330
+  references:
+    version: 2
+    RefIds:
+    - rid: 3188358450459967491
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: abcdabcd
+    - rid: 3188358450459967494
+      type: {class: DA_Wait, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        WaitTime: 2
+    - rid: 3188358459041251328
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0
+        Text: '       |   '
+    - rid: 3188358459041251329
+      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358459041251330
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0
+        Text: Finish
