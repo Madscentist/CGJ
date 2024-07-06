@@ -212,6 +212,9 @@
                 float3 result = float3(0, 0, 0);
                 float3 result2 = float3(0, 0, 0);
 
+                if (tex.y > 0)
+                    return float3(0, 0, 0);
+
                 if (tex.x * 10 > _FireT.w + dither * 0.012)
                 {
                     float idensity = tex.x * 10;

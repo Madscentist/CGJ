@@ -21,7 +21,7 @@ namespace Game.DialogBox
             DialogBox box = new();
             var uiInstance = CreateUI_DialogBox(prefab);
             box.Init(uiInstance);
-            //uiInstance.gameObject.SetActive(false);
+            uiInstance.gameObject.SetActive(false);
             DialogBoxManager.AddBox(box);
             return box;
         }
