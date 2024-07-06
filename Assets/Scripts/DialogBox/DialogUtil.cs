@@ -11,6 +11,7 @@ namespace Game.DialogBox
             [DialogActionType.ShowText] = typeof(DA_ShowText),
             [DialogActionType.Wait] = typeof(DA_Wait),
             [DialogActionType.WaitButtonPressed] = typeof(DA_WaitButtonPressed),
+            [DialogActionType.ClearText] = typeof(DA_ClearText),
         };
 
         public static DialogBox CreateDialogBox(UI_DialogBox prefab = null)
@@ -20,6 +21,7 @@ namespace Game.DialogBox
             DialogBox box = new();
             var uiInstance = CreateUI_DialogBox(prefab);
             box.Init(uiInstance);
+            //uiInstance.gameObject.SetActive(false);
             DialogBoxManager.AddBox(box);
             return box;
         }

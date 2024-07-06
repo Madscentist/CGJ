@@ -9,7 +9,8 @@ namespace Game.DialogBox
     {
         ShowText,
         Wait,
-        WaitButtonPressed
+        WaitButtonPressed,
+        ClearText,
     }
 
     [System.Serializable]

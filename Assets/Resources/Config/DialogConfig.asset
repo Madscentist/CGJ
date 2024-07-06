@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DialogConfig
   m_EditorClassIdentifier: 
   _datas:
-  - _name: Dialog
+  - _name: Dialog_Test
     _id: 1
     _actions:
     - Type: 0
@@ -31,6 +31,18 @@ MonoBehaviour:
     - Type: 0
       _action:
         rid: 3188358459041251330
+    - Type: 2
+      _action:
+        rid: 3188358467510075393
+    - Type: 3
+      _action:
+        rid: 3188358467510075394
+    - Type: 0
+      _action:
+        rid: 3188358467510075396
+    - Type: 2
+      _action:
+        rid: 3188358467510075395
   references:
     version: 2
     RefIds:
@@ -39,6 +51,7 @@ MonoBehaviour:
       data:
         IntervalTime: 0.05
         Text: abcdabcd
+        AnimationType: 1
     - rid: 3188358450459967494
       type: {class: DA_Wait, ns: Game.DialogBox, asm: Assembly-CSharp}
       data:
@@ -48,6 +61,7 @@ MonoBehaviour:
       data:
         IntervalTime: 0
         Text: '       |   '
+        AnimationType: 0
     - rid: 3188358459041251329
       type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
       data: 
@@ -56,3 +70,19 @@ MonoBehaviour:
       data:
         IntervalTime: 0
         Text: Finish
+        AnimationType: 0
+    - rid: 3188358467510075393
+      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358467510075394
+      type: {class: DA_ClearText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358467510075395
+      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358467510075396
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: 1111
+        AnimationType: 1

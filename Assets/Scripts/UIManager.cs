@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using Mmang;
 using UnityEngine;
 
-public class UIManager : SingletonMono<UIManager>
+namespace Game
 {
-    [SerializeField] private Canvas _canvas;
-
-    public static Canvas Canvas => Instance?._canvas;
-
-    protected override void OnAwake()
+    public class UIManager : SingletonMono<UIManager>
     {
-        base.OnAwake();
-        if (_canvas == null)
-            _canvas = GetComponent<Canvas>();
+        [SerializeField] private Canvas _canvas;
+
+        public static Canvas Canvas => Instance?._canvas;
+
+        protected override void OnAwake()
+        {
+            base.OnAwake();
+            if (_canvas == null)
+                _canvas = GetComponent<Canvas>();
+        }
     }
+
 }

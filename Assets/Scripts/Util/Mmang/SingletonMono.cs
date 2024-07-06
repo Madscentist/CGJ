@@ -13,14 +13,6 @@ namespace Mmang
                     _instance = FindObjectOfType<T>();
                 }
 
-                if (_instance == null)
-                {
-                    GameObject go = new GameObject();
-                    DontDestroyOnLoad(go);
-                    go.name = typeof(T).Name;
-                    _instance = go.AddComponent<T>();
-                }
-
                 return _instance;
             }
         }

@@ -21,6 +21,9 @@ public class Test_Mmang : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
             NextDialog();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+            EffectManager.Instance.StartHurtEffect(0.5f);
     }
 
     private void NextDialog()
