@@ -53,7 +53,7 @@ MonoBehaviour:
   qualitySettings:
     lightTextureSize: 3
     lightEffectTextureSize: 3
-    lightFilterMode: 1
+    lightFilterMode: 0
     lightmapFilterMode: 1
     updateMethod: 0
     coreAxis: 0

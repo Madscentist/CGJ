@@ -18,7 +18,7 @@ public class MonsterController : MonoBehaviour
     public enum State
     {
         Idle,
-        Chasing
+        Chasing,
     }
 
     [Serializable]
@@ -83,5 +83,9 @@ public class MonsterController : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-    
+
+    public void Hurt()
+    {
+        _agent.speed = 0f;
+    }
 }

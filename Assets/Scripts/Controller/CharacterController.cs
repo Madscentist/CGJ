@@ -11,10 +11,13 @@ namespace Controller
         public Inputs input;
         public Settings setting;
 
-        public Gps gps;
+        public Point point;
         public ToolList toolList;
 
         public bool infinite;
+
+        public GameObject shieldEffector;
+        
         private bool _shieldOn;
         
         [Serializable]
@@ -40,6 +43,8 @@ namespace Controller
 
             public bool boost;
             public bool gps;
+
+            public Vector2 lookAt;
         }
 
         [Serializable]
@@ -80,6 +85,8 @@ namespace Controller
         {
             InputUpdate();
             ToolUpdate();
+            
+            shieldEffector.SetActive(_shieldOn);
 
             if (input.boost && !_boostInCool)
             {
@@ -91,7 +98,7 @@ namespace Controller
 
             if (input.gps && !_gpsCool)
             {
-                gps.Use(this);
+                point.Use(this);
 
                 _gpsCool = true;
                 _gpsCoolTime = setting.gpsCoolTime;
@@ -141,6 +148,15 @@ namespace Controller
             {
                 toolList.tool4.Use(this);
             }
+
+            if (_shieldOn)
+            {
+                _shieldExitTime -= Time.deltaTime;
+                if (_shieldExitTime < 0f)
+                {
+                    _shieldOn = false;
+                }
+            }
         }
 
         private void FixedUpdate()
@@ -158,6 +174,7 @@ namespace Controller
                 }
             }
 
+            gameObject.tag = _inBoost ? "Untagged" : "Player";
 
             if (_boostApplyTime <= 0f)
             {
@@ -207,14 +224,22 @@ namespace Controller
             Invoke(nameof(AccelerateEnd), time);
         }
 
+        public Vector2 Velocity()
+        {
+            return _rb.velocity;
+        }
+
         private void AccelerateEnd()
         {
             _accelerateRate = 0f;
         }
 
+        private float _shieldExitTime;
+
         public void ShieldOn()
         {
             _shieldOn = true;
+            _shieldExitTime = 10f;
         }
         
         private void OnTriggerEnter2D(Collider2D other)
