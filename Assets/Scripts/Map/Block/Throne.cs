@@ -15,6 +15,9 @@ namespace Map.Block
 
         public SpriteRenderer image;
 
+        public Sprite triggered;
+        public Sprite unTriggered;
+        
         private bool _on;
         private bool _cooling;
         private float _coolTimeLeft;
@@ -35,13 +38,13 @@ namespace Map.Block
             if (distance < triggerDistance && !_cooling)
             {
                 _on = true;
-                image.color = Color.red;
+                image.sprite = triggered;
                 Invoke(nameof(Triggered), maintainTime);
             }
 
             if (_cooling)
             {
-                image.color = Color.blue;
+                image.sprite = unTriggered;
                 _coolTimeLeft -= Time.deltaTime;
 
                 if (_coolTimeLeft <= 0f)
@@ -51,6 +54,8 @@ namespace Map.Block
             }
         }
 
+        
+        
         private void Triggered()
         {
             _on = false;

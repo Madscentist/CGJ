@@ -43,6 +43,8 @@ namespace Controller
 
             public bool boost;
             public bool gps;
+
+            public Vector2 lookAt;
         }
 
         [Serializable]
@@ -172,6 +174,7 @@ namespace Controller
                 }
             }
 
+            gameObject.tag = _inBoost ? "Untagged" : "Player";
 
             if (_boostApplyTime <= 0f)
             {
@@ -219,6 +222,11 @@ namespace Controller
         {
             _accelerateRate = rate;
             Invoke(nameof(AccelerateEnd), time);
+        }
+
+        public Vector2 Velocity()
+        {
+            return _rb.velocity;
         }
 
         private void AccelerateEnd()

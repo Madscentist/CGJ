@@ -93,8 +93,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maintainTime: 2
   coolTime: 3
-  triggerDistance: 1
+  blockTime: 1.5
+  triggerDistance: 0.5
   image: {fileID: 6902028101490264963}
+  triggered: {fileID: -95564595, guid: 3e93c1b16f9e03f4b91bbaa8a71abf3a, type: 3}
+  unTriggered: {fileID: -40362955, guid: 3e93c1b16f9e03f4b91bbaa8a71abf3a, type: 3}
 --- !u!1 &5831366487135553225
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,9 +171,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
-    type: 3}
-  m_Color: {r: 0.9924528, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -40362955, guid: 3e93c1b16f9e03f4b91bbaa8a71abf3a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
