@@ -13,76 +13,11 @@ MonoBehaviour:
   m_Name: DialogConfig
   m_EditorClassIdentifier: 
   _datas:
-  - _name: Dialog_Test
-    _id: 1
-    _actions:
-    - Type: 0
-      _action:
-        rid: 3188358450459967491
-    - Type: 1
-      _action:
-        rid: 3188358450459967494
-    - Type: 0
-      _action:
-        rid: 3188358459041251328
-    - Type: 2
-      _action:
-        rid: 3188358459041251329
-    - Type: 0
-      _action:
-        rid: 3188358459041251330
-    - Type: 2
-      _action:
-        rid: 3188358467510075393
-    - Type: 3
-      _action:
-        rid: 3188358467510075394
-    - Type: 0
-      _action:
-        rid: 3188358467510075396
-    - Type: 2
-      _action:
-        rid: 3188358467510075395
-  references:
-    version: 2
-    RefIds:
-    - rid: 3188358450459967491
-      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data:
-        IntervalTime: 0.05
-        Text: abcdabcd
-        AnimationType: 1
-    - rid: 3188358450459967494
-      type: {class: DA_Wait, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data:
-        WaitTime: 2
-    - rid: 3188358459041251328
-      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data:
-        IntervalTime: 0
-        Text: '       |   '
-        AnimationType: 0
-    - rid: 3188358459041251329
-      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data: 
-    - rid: 3188358459041251330
-      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data:
-        IntervalTime: 0
-        Text: Finish
-        AnimationType: 0
-    - rid: 3188358467510075393
-      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data: 
-    - rid: 3188358467510075394
-      type: {class: DA_ClearText, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data: 
-    - rid: 3188358467510075395
-      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data: 
-    - rid: 3188358467510075396
-      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
-      data:
-        IntervalTime: 0.05
-        Text: 1111
-        AnimationType: 1
+  - {fileID: 11400000, guid: 2b749bebe2c8cb64390ff8f385df1ab9, type: 2}
+  - {fileID: 11400000, guid: 8c6c9d30c482b31459a96e863c7dab2e, type: 2}
+  - {fileID: 11400000, guid: 5ce7c81a190a9f54a857bc4372733a74, type: 2}
+  - {fileID: 11400000, guid: 9d9970097c1e87c48a93e9d8ea99ec07, type: 2}
+  - {fileID: 11400000, guid: 2882598726b664b49be1ba292f360916, type: 2}
+  - {fileID: 11400000, guid: 57dee64e4de8cff43827213e2a8aefa8, type: 2}
+  - {fileID: 11400000, guid: 3b35394674bab8a458f84df865631c44, type: 2}
+  - {fileID: 11400000, guid: e6c36cd055556964698a902e42341f8a, type: 2}

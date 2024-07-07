@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Retro
+  m_Name: CRT
   m_Shader: {fileID: 4800000, guid: d720fef9aa1364d46a376a34e8e15e03, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Brightness: 0.5
-    - _Curvature: 2.5
+    - _Curvature: 0.15
     - _NoiseAmount: 0.5
     - _NoiseScale: 1
     - _NoiseSpeed: 1

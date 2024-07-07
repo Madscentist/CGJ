@@ -10,6 +10,8 @@ namespace Game.DialogBox
         public List<DialogBox> Boxes { get; } = new();
         public List<DialogBox> BoxesToRemove { get; } = new();
 
+        public DialogBox DialogBox { get; private set; }
+
         private void Update()
         {
             float dt = Time.deltaTime;
@@ -19,6 +21,12 @@ namespace Game.DialogBox
                 BoxesToRemove.ForEach(box => Boxes.Remove(box));
                 BoxesToRemove.Clear();
             }
+        }
+
+        protected void Start()
+        {
+            DialogBox = DialogUtil.CreateDialogBox();
+            DontDestroyOnLoad(DialogBox.UI);
         }
 
         public static void AddBox(DialogBox box)

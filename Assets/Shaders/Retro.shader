@@ -94,7 +94,7 @@
                 float GetLine(float2 uv)
                 {
                     int y = uv.y * 360;
-                    if (y % 4 == 0)
+                    if (y % 3 == 0)
                         return 1;
                     return 0;
                 }
@@ -105,15 +105,20 @@
                     float2 uv = i.positionCS.xy / _ScreenParams.xy;
                     
                     //
-                    float vignet = saturate(pow(uv.x * uv.y * (1 - uv.x) * (1 - uv.y) * 200, 2));
-
-                    //
                     float d = distance(uv, float2(0.5, 0.5));
                     float d1 = min(distance(uv.x, 0.5), distance(uv.y, 0.5));
                     d *= lerp(1, 1.2, pow(d1, _Curvature));
                     float2 dir = normalize(uv - float2(0.5, 0.5));
-                    uv = dir * d + float2(0.5, 0.5);
+                    //uv = dir * d + float2(0.5, 0.5);
+
+                    float2 center = uv - 0.5;
+                    float r2 = center.x * center.x + center.y * center.y;
+                    float ratio = 1.0 + r2 * _Curvature * sqrt(r2);  
                     
+                    uv = center * ratio + 0.5;  
+
+                    //
+                    float vignet = saturate(pow(uv.x * uv.y * (1 - uv.x) * (1 - uv.y) * 400, 1));
                     //
                     if (uv.x < 0 || uv.x > 1 || uv.y < 0 || uv.y > 1)
                         return float4(0, 0, 0, 0);
@@ -128,9 +133,9 @@
                     //lines *= shine;
                     float3 tex = SAMPLE_TEXTURE2D(_MainTex, my_point_clamp_sampler, uv);
                     float isLine = GetLine(uv);
-                    float3 color = lerp(tex, tex * 0.8, isLine);
-                    //color.rb *= pow(sin(uv.y * 640) + 1, 2) * _Brightness;
-                    //color.g *= pow(cos(uv.y * 640) + 1, 2) * _Brightness;
+                    float3 color = lerp(tex, tex * 0.8, 0);
+                    color.rb *= (sin(uv.y * 640) + 1) * _Brightness + 1;
+                    color.g *= (cos(uv.y * 640) + 1) * _Brightness + 1;
                     //float4 color = lerp(tex, lines, _ScanningLinesAmount);
                     //color = lerp(color, noise, _NoiseAmount) * vignet;
                     color *= vignet;

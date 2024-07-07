@@ -12,9 +12,14 @@ namespace Game.DialogBox
         public float IntervalTime;
         public string Text;
         public TextAnimationType AnimationType;
+        public bool NewLine = false;
+        public bool ClearText = false;
 
         public override IEnumerator DoAction(DialogBox dialogBox)
         {
+            if (ClearText)
+                dialogBox.UI.ClearText();
+            yield return null;
             bool skip = false;
             int length = Text.Length;
             var chars = Text.ToCharArray();
@@ -34,7 +39,8 @@ namespace Game.DialogBox
                         yield return GameUtil.WaitSeconds(IntervalTime);
                 }
             }
-
+            if (NewLine)
+                dialogBox.UI.NewLine();
             yield return null;
         }
     }
