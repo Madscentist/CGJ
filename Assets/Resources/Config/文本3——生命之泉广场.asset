@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d87136ad9029c498eb3859610b88ba, type: 3}
+  m_Name: "\u6587\u672C3\u2014\u2014\u751F\u547D\u4E4B\u6CC9\u5E7F\u573A"
+  m_EditorClassIdentifier: 
+  _name: "\u6587\u672C3"
+  _id: 1003
+  _actions:
+  - Type: 0
+    _action:
+      rid: 3188358472198520853
+  - Type: 2
+    _action:
+      rid: 3188358472198520872
+  - Type: 0
+    _action:
+      rid: 3188358472198520890
+  - Type: 0
+    _action:
+      rid: 3188358472198520855
+  - Type: 0
+    _action:
+      rid: 3188358472198520857
+  - Type: 1
+    _action:
+      rid: 3188358472198520858
+  - Type: 0
+    _action:
+      rid: 3188358472198520859
+  - Type: 2
+    _action:
+      rid: 3188358472198520864
+  - Type: 3
+    _action:
+      rid: 3188358472198520866
+  - Type: 0
+    _action:
+      rid: 3188358472198520867
+  - Type: 2
+    _action:
+      rid: 3188358472198520872
+  - Type: 0
+    _action:
+      rid: 3188358472198520869
+  - Type: 2
+    _action:
+      rid: 3188358472198520872
+  - Type: 0
+    _action:
+      rid: 3188358472198520871
+  - Type: 2
+    _action:
+      rid: 3188358472198520872
+  references:
+    version: 2
+    RefIds:
+    - rid: 3188358472198520853
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u5728\u5BDF\u89C9\u5230\u81EA\u5DF1\u60CA\u547C\u51FA\u58F0\u7684\u77AC\u95F4,
+          \u6211\u8D76\u7D27\u95ED\u4E0A\u5634\u8EB2\u5728\u4E86\u9634\u5F71\u5904\u89C2\u5BDF\u60C5\u51B5"
+        AnimationType: 0
+        NewLine: 0
+        ClearText: 0
+    - rid: 3188358472198520855
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u4E00\u4E2A\u602A\u7269"
+        AnimationType: 1
+        NewLine: 0
+        ClearText: 0
+    - rid: 3188358472198520857
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u88AB\u60CA\u6270\u540E\u6765\u8FFD\u6740\u6211, \u6211\u4E5F\u53EF\u4EE5\u968F\u65F6\u9003\u8DD1"
+        AnimationType: 0
+        NewLine: 1
+        ClearText: 0
+    - rid: 3188358472198520858
+      type: {class: DA_Wait, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        WaitTime: 2
+    - rid: 3188358472198520859
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u6211\u8EAB\u5904\u5728\u8FD9\u4E2A\u6697\u65E0\u5929\u65E5\u7684\u8FF7\u5BAB\u7684\u8FD9\u6BB5\u65F6\u95F4\u65F6\u95F4\u91CC,
+          \u8FD9\u79CD\u8B66\u6212\u610F\u8BC6\u5DF2\u7ECF\u523B\u8FDB\u4E86\u6211\u7684DNA\u91CC\u4E86"
+        AnimationType: 0
+        NewLine: 0
+        ClearText: 1
+    - rid: 3188358472198520864
+      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358472198520866
+      type: {class: DA_ClearText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358472198520867
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u8FC7\u4E86\u4E00\u6BB5\u65F6\u95F4\u540E, \u90A3\u4E00\u4E2A\u602A\u7269\u597D\u50CF\u6CA1\u6709\u4EFB\u4F55\u52A8\u9759,
+          \u6211\u9760\u8FD1\u4E00\u770B"
+        AnimationType: 0
+        NewLine: 1
+        ClearText: 1
+    - rid: 3188358472198520869
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u600E\u4E48\u662F\u4E00\u4E2A\u96D5\u50CF, \u8FD8\u505A\u8FD9\u4E48\u903C\u771F,
+          \u957F\u5F97\u90A3\u4E48\u50CF\u4E4B\u524D\u7684\u5C0F\u9B45\u9B54, \u6211\u8FD8\u4EE5\u4E3A\u662F\u6210\u719F\u4F53\u602A\u7269\u5462,
+          \u5413\u6211\u4E00\u8DF3"
+        AnimationType: 0
+        NewLine: 1
+        ClearText: 1
+    - rid: 3188358472198520871
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u600E\u4E48\u611F\u89C9\u6D51\u8EAB\u6696\u6D0B\u6D0B\u7684, \u75B2\u60EB\u548C\u4F24\u52BF\u90FD\u6D88\u5931\u4E86\u4E00\u6837,
+          \u662F\u8FD9\u4E2A\u796D\u575B\u4E00\u6837\u7684\u4E1C\u897F\u7684\u6548\u679C\u5417,
+          \u8981\u662F\u80FD\u4E00\u76F4\u5446\u5728\u8FD9\u5C31\u597D\u4E86"
+        AnimationType: 0
+        NewLine: 0
+        ClearText: 1
+    - rid: 3188358472198520872
+      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358472198520890
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u54EA\u6015\u5728\u796D\u575B\u65C1\u8FB9\u7684"
+        AnimationType: 0
+        NewLine: 0
+        ClearText: 1

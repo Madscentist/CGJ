@@ -61,6 +61,7 @@ namespace Game.DialogBox
             if (IsDialogging)
                 StopDialog();
 
+            UI.SetBG(0);
             UI.gameObject.SetActive(true);
             UI.ClearText();
             CurDialogData = data;

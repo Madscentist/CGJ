@@ -11,6 +11,8 @@ namespace Game.DialogBox
         Wait,
         WaitButtonPressed,
         ClearText,
+        NewLine,
+        SetBG
     }
 
     [System.Serializable]
@@ -30,17 +32,6 @@ namespace Game.DialogBox
             get => _action;
             set => _action = value;
         }
-    }
-
-    [System.Serializable]
-    public class DialogData
-    {
-        [SerializeField] private string _name = "Dialog";
-        [SerializeField] private uint _id;
-        [SerializeField] private List<DialogActionSetting> _actions;
-        public string Name => _name;
-        public uint ID => _id;
-        public List<DialogActionSetting> ActionSettings => _actions;
     }
 
     [CreateAssetMenu(fileName = "DialogConfig", menuName = "Config/DialogConfig")]
@@ -70,21 +61,6 @@ namespace Game.DialogBox
                     return data;
             }
             return null;
-        }
-
-        private void OnValidate() => CheckTypeChange();
-        private void CheckTypeChange()
-        {
-            foreach (var data in Datas)
-            {
-                foreach (var setting in data.ActionSettings)
-                {
-                    if (setting.Action == null || DialogUtil.TypeDict[setting.Type] != setting.Action.GetType())
-                    {
-                        setting.Action = System.Activator.CreateInstance(DialogUtil.TypeDict[setting.Type]) as DialogAction;
-                    }
-                }
-            }
         }
 
     }

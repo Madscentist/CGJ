@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded00ff420b804c41919b30fbc88d245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Resolution: {x: 640, y: 360}
+  Resolution: {x: 320, y: 180}
 --- !u!1 &399395337
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2dcb684381ab3d4282a5c26b90818a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testDialogIDs: 01000000
+  _testDialogIDs: eb030000d2070000d3070000ec030000ed030000
 --- !u!4 &399395339
 Transform:
   m_ObjectHideFlags: 0
@@ -327,6 +327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcb09cd0ff4cfb4fa3346029e271dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text1: {fileID: 0}
+  _text2: {fileID: 0}
 --- !u!224 &589122553 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 479135475070649526, guid: ec1d3ec50336eff4a8dd6cd926106045,
@@ -477,8 +479,8 @@ Camera:
   m_GameObject: {fileID: 755843825}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -641,6 +643,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireTest2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396880429735205666, guid: adcfdac61add06e4b8bd4a1e3ee1797c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -877,6 +884,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8279321006638610539, guid: 10650c0862f57e1419fbd80bf1e5adac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1050,7 +1062,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 2590, y: 1440}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1067,8 +1079,8 @@ Canvas:
   m_GameObject: {fileID: 1880376464}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 1912581072}
+  m_RenderMode: 1
+  m_Camera: {fileID: 755843827}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

@@ -31,8 +31,8 @@ namespace Game.TextAnimation
         public override Vector3 GetOffset(int charIndex, int vertexIndex, float width, float height)
         {
             float t = CurTime / AnimLength;
-            Vector3 scaleOffset = Mathf.Lerp(IntroScale - 0.5f, 0f, t) * Scale(vertexIndex, width, height); 
-            return scaleOffset + Vector3.Lerp(IntroOffset, Vector2.zero, t);
+            //Vector3 scaleOffset = Mathf.Lerp(IntroScale - 0.5f, 0f, t) * Scale(vertexIndex, width, height); 
+            return Vector3.Lerp(IntroOffset, Vector2.zero, t);
         }
 
         private Vector2 Scale(int vIndex, float width, float height)

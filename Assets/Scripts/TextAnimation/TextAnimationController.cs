@@ -42,15 +42,33 @@ namespace Game.TextAnimation
 
     public class TextAnimationController : MonoBehaviour
     {
+        [SerializeField] TMP_Text _text1;
+        [SerializeField] TMP_Text _text2;
         public TMP_Text TMPText { get; private set; }
         public List<CharAnimationData> CharAnimationDatas { get; } = new();
         private StringBuilder _textBuilder = new();
 
-        private void Awake() => TMPText = GetComponent<TMP_Text>();
+
+        public void SetBG(int i)
+        {
+            if (i == 0)
+            {
+                TMPText = _text1;
+                _text2.text = "";
+            }
+            else
+            {
+                TMPText = _text2;
+                _text1.text = "";
+            }
+            UpdateText();
+        }
+
+        //private void Awake() => SetBG(0);
 
         private void Update()
         {
-            UpdateAnimation();
+            //UpdateAnimation();
             CharAnimationDatas.ForEach(data => data.Update());
         }
 
@@ -100,9 +118,16 @@ namespace Game.TextAnimation
         public void ClearText()
         {
             CharAnimationDatas.Clear();
-            //_textBuilder.Clear();
-            _textBuilder.Remove(0, _textBuilder.Length);
-            TMPText.text = "";
+            _textBuilder = new();
+            //_textBuilder.Remove(0, _textBuilder.Length);
+            TMPText.text = string.Empty;
+        }
+
+        public void NewLine()
+        {
+            _textBuilder.Append('\n');
+            CharAnimationDatas.Add(new());
+            UpdateText();
         }
 
         private void UpdateAnimation()

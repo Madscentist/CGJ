@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d87136ad9029c498eb3859610b88ba, type: 3}
+  m_Name: "\u6587\u672C1\u2014\u2014\u788E\u9AA8\u5934"
+  m_EditorClassIdentifier: 
+  _name: "\u6587\u672C1"
+  _id: 1001
+  _actions:
+  - Type: 0
+    _action:
+      rid: 3188358467510075397
+  - Type: 2
+    _action:
+      rid: 3188358467510075398
+  - Type: 3
+    _action:
+      rid: 3188358467510075399
+  - Type: 0
+    _action:
+      rid: 3188358472198520881
+  - Type: 0
+    _action:
+      rid: 3188358467510075400
+  - Type: 0
+    _action:
+      rid: 3188358467510075403
+  - Type: 2
+    _action:
+      rid: 3188358467510075401
+  references:
+    version: 2
+    RefIds:
+    - rid: 3188358467510075397
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u811A\u7684\u9644\u8FD1\u597D\u50CF\u6709\u4E9B\u767D\u8272\u7684\u7269\u4F53,
+          \u5F62\u72B6\u4E0D\u56FA\u5B9A, \u8D28\u5730\u4E5F\u4E0D\u662F\u5F88\u575A\u786C,
+          \u4E00\u8E29\u5C31\u788E\u4E86"
+        AnimationType: 0
+        NewLine: 0
+        ClearText: 0
+    - rid: 3188358467510075398
+      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358467510075399
+      type: {class: DA_ClearText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358467510075400
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u8FD9\u4E9B\u7269\u4F53\u770B\u8D77\u6765\u6709\u70B9\u50CF\u662F\u9AA8\u5934,
+          \u91CE\u517D\u7684\u9AA8\u5934\u597D\u50CF\u6CA1\u6709\u8FD9\u4E2A\u5C3A\u5BF8\u7684,"
+        AnimationType: 0
+        NewLine: 0
+        ClearText: 0
+    - rid: 3188358467510075401
+      type: {class: DA_WaitButtonPressed, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data: 
+    - rid: 3188358467510075403
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0.05
+        Text: "\u96BE\u9053\u662F......"
+        AnimationType: 1
+        NewLine: 0
+        ClearText: 0
+    - rid: 3188358472198520881
+      type: {class: DA_ShowText, ns: Game.DialogBox, asm: Assembly-CSharp}
+      data:
+        IntervalTime: 0
+        Text: 
+        AnimationType: 0
+        NewLine: 0
+        ClearText: 0

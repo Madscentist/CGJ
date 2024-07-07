@@ -10,11 +10,9 @@ public class Test_Mmang : MonoBehaviour
     [SerializeField] private List<uint> _testDialogIDs;
     private int _selectedIndex = 0;
 
-    public DialogBox DialogBox { get; private set; }
-
     private void Start()
     {
-        DialogBox = DialogUtil.CreateDialogBox();
+        
     }
 
     private void Update()
@@ -28,9 +26,9 @@ public class Test_Mmang : MonoBehaviour
 
     private void NextDialog()
     {
-        if (DialogBox.IsDialogging)
+        if (DialogBoxManager.Instance.DialogBox.IsDialogging)
             return;
-        DialogBox.StartDialog(_testDialogIDs[_selectedIndex]);
+        DialogBoxManager.Instance.DialogBox.StartDialog(_testDialogIDs[_selectedIndex]);
 
         _selectedIndex++;
         if (_selectedIndex >= _testDialogIDs.Count)
