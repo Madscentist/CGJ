@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Map.Block
@@ -7,8 +8,19 @@ namespace Map.Block
         public float triggeredTime;
         public float maintainTime;
 
+        public Sprite triggered;
+        public Sprite triggering;
+        public Sprite unTriggered;
+        
         private bool _triggered;
         private bool _caveOn;
+
+        private SpriteRenderer _renderer;
+
+        private void Start()
+        {
+            _renderer = GetComponent<SpriteRenderer>();
+        }
 
         protected override void EnterEffect(Collider2D col)
         {
@@ -23,7 +35,9 @@ namespace Map.Block
             if (!_triggered)
             {
                 _triggered = true;
-                GetComponent<SpriteRenderer>().color = Color.yellow;
+
+                _renderer.sprite = triggering;
+                //GetComponent<SpriteRenderer>().color = Color.yellow;
 
                 Invoke(nameof(CaveOn), triggeredTime);
             }
@@ -33,14 +47,17 @@ namespace Map.Block
         {
             _caveOn = true;
             Invoke(nameof(Off), maintainTime);
-            GetComponent<SpriteRenderer>().color = Color.red;
+
+            _renderer.sprite = triggered;
+            //GetComponent<SpriteRenderer>().color = Color.red;
         }
 
         private void Off()
         {
             _caveOn = false;
             _triggered = false;
-            GetComponent<SpriteRenderer>().color = Color.white;
+            _renderer.sprite = unTriggered;
+            //GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 }

@@ -17,6 +17,8 @@ namespace Controller
         public bool infinite;
 
         public GameObject shieldEffector;
+
+        public SpriteRenderer renderer;
         
         private bool _shieldOn;
         
@@ -81,13 +83,21 @@ namespace Controller
         private bool _gpsCool;
         private float _gpsCoolTime;
 
+        private float _imageRotateMax = 30f;
+        private float _imageRotateMin = -30f;
+        private float _imageTargetRotate;
+        private float _imageCurrentRotate;
+        
         private void Update()
         {
             InputUpdate();
             ToolUpdate();
+            SpriteUpdate();
             
             shieldEffector.SetActive(_shieldOn);
 
+            
+            
             if (input.boost && !_boostInCool)
             {
                 _inBoost = true;
@@ -122,6 +132,79 @@ namespace Controller
                     _boostInCool = false;
                 }
             }
+        }
+
+        private bool _imageFirstRotate;
+        private float _imageTargetRotateX;
+        private float _imageCurrentRotateX;
+        private void SpriteUpdate()
+        {
+
+            renderer.color = _shieldOn ? Color.yellow : Color.white;
+            
+            if (input.movement.x > 0f)
+            {
+                renderer.flipX = false;
+                _imageTargetRotate = _imageRotateMax;
+            }
+
+            if (input.movement.x < 0f)
+            {
+                renderer.flipX = true;
+                _imageTargetRotate = _imageRotateMin;
+            }
+
+            if (input.movement.x == 0)
+            {
+                _imageTargetRotate = 0f;
+            }
+
+            if (input.movement.y > 0f)
+            {
+                _imageTargetRotateX = 30f;
+            }
+
+            if (input.movement.y < 0f)
+            {
+                _imageTargetRotateX = -30f;
+
+            }
+
+            if (input.movement.y == 0f)
+            {
+                _imageTargetRotateX = 0f;
+
+            }
+            
+            // if (input.movement.magnitude > 0.1f)
+            // {
+            //     
+            //     if (_imageFirstRotate)
+            //     {
+            //         _imageTargetRotate = _imageRotateMax;
+            //         _imageFirstRotate = false;
+            //     }
+            //     
+            //     if (Mathf.Abs(_imageCurrentRotate - _imageRotateMax) < 0.1f)
+            //     {
+            //         _imageTargetRotate = _imageRotateMax;
+            //     }
+            //
+            //     if (Mathf.Abs(_imageCurrentRotate - _imageRotateMin) < 0.1f)
+            //     {
+            //         _imageTargetRotate = _imageRotateMin;
+            //     }
+            // }
+            // else
+            // {
+            //     _imageFirstRotate = true;
+            //     _imageTargetRotate = 0f;
+            // }
+            _imageCurrentRotate = Mathf.Lerp(_imageCurrentRotate, _imageTargetRotate, 10f * Time.deltaTime);
+            _imageCurrentRotateX = Mathf.Lerp(_imageCurrentRotateX, _imageTargetRotateX, 10f * Time.deltaTime);
+            
+            renderer.transform.eulerAngles = new Vector3(_imageCurrentRotateX, 0f, _imageCurrentRotate);
+
         }
 
         private void ToolUpdate()
@@ -161,6 +244,7 @@ namespace Controller
 
         private void FixedUpdate()
         {
+            
             if (_canMove)
             {
                 if (_inBoost)
