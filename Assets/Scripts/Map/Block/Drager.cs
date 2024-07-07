@@ -17,16 +17,23 @@ namespace Map.Block
 
         protected override void EnterEffect(Collider2D col)
         {
-            var rb = col.GetComponent<Rigidbody2D>();
-            _dragMemory.Add(col.gameObject, rb.drag);
-            rb.drag = drag;
+            if (col.CompareTag("Player"))
+            {
+                var rb = col.GetComponent<Rigidbody2D>();
+                rb.drag = drag;
+            }
+            
+            
         }
 
         protected override void ExitEffect(Collider2D col)
         {
-            var rb = col.GetComponent<Rigidbody2D>();
-            rb.drag = _dragMemory[col.gameObject];
-            _dragMemory.Remove(col.gameObject);
+            if (col.CompareTag("Player"))
+            {
+                var rb = col.GetComponent<Rigidbody2D>();
+                rb.drag = 4f;
+            }
+            
         }
     }
 }
