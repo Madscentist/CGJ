@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Game.DialogBox;
+using Mmang;
 using UnityEngine;
 
 namespace Game
@@ -30,5 +31,9 @@ namespace Game
         public static UI_DialogBox UI_DialogBox_Default
             => Instance?._UI_DialogBox_Default;
         #endregion
+
+        [SerializeField] private SoundPlayer _soundPlayer;
+        public static SoundPlayer SoundPlayerPrefab
+            => Instance?._soundPlayer;
     }
 }

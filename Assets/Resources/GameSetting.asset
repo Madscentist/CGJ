@@ -15,3 +15,5 @@ MonoBehaviour:
   _keyCode_NextDialog: 32
   _UI_DialogBox_Default: {fileID: 6829246787405795039, guid: ec1d3ec50336eff4a8dd6cd926106045,
     type: 3}
+  _soundPlayer: {fileID: 1681086656542959966, guid: a9727787a14436344a32d1b770b121ad,
+    type: 3}
